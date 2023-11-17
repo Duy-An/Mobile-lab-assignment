@@ -11,11 +11,13 @@ function App() {
     'Go to gym',
     'Walk dog'
   ]);
-
+  const addTask = (taskText) => {
+    setTasks(prevTasks => [...prevTasks, taskText]);
+  };
   return (
     <SafeAreaView>
       <ToDoList tasks={tasks} />
-      <ToDoForm />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }

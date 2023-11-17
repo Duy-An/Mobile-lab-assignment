@@ -19,14 +19,21 @@ const styles = StyleSheet.create({
   },
 });
 
-function ToDoForm() {
+function ToDoForm({ addTask }) {
+  const [taskText, setTaskText] = useState('');
+
   return (
     <View style={styles.form}>
       <TextInput
         style={styles.input}
         placeholder="Add a new task..."
+        onChangeText={setTaskText}
+        value={taskText}
       />
-      <Button title="Add" />
+      <Button title="Add" onPress={() => {
+        addTask(taskText);
+        setTaskText(''); 
+      }} />
     </View>
   );
 }
