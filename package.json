@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "@tsconfig/react-native": "^3.0.2",
-    "@types/jest": "^29.5.8"
-  }
-}
