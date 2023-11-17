@@ -1,7 +1,7 @@
 "use client";
 
 import { View, TextInput, Button, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 
 const styles = StyleSheet.create({
   form: {
@@ -22,20 +22,17 @@ const styles = StyleSheet.create({
 });
 
 function ToDoForm({ addTask }) {
-  const [taskText, setTaskText] = useState('');
+  const [taskText, setTaskText] = React.useState('');
 
   return (
     <View style={styles.form}>
       <TextInput
         style={styles.input}
         placeholder="Add a new task..."
-        onChangeText={setTaskText}
+        onChangeText={(text) => setTaskText(text)}
         value={taskText}
-      />
-      <Button title="Add" onPress={() => {
-        addTask(taskText);
-        setTaskText(''); 
-      }} />
+/>
+      <Button title="Add Task" onPress={() => addTask(taskText)} />
     </View>
   );
 }

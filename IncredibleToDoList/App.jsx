@@ -13,7 +13,7 @@ function App() {
   ]);
 
   const addTask = (taskText) => {
-    setTasks(prevTasks => [...prevTasks, taskText]);
+    setTasks([...tasks, taskText]);
   };
 
   return (
